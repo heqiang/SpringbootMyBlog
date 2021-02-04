@@ -13,14 +13,15 @@
             <form method="post" action="/user/login">
                 <h2>登录</h2>
                 <label>
-                    <span>邮箱</span>
-                    <input type="email" />
+                    <span>用户名</span>
+                    <input type="username" />
                 </label>
                 <label>
                     <span>密码</span>
                     <input type="password" />
                 </label>
                 <p class="forgot-pass"><a href="javascript:">忘记密码？</a></p>
+                <p class="forgot-pass" style="color: red" th:text="${msg}"></p>
                 <button type="submit" class="submit">登 录</button>
             </form>
 
@@ -54,6 +55,7 @@
                         <span>密码</span>
                         <input type="password" />
                     </label>
+                    <p class="forgot-pass" th:text="${msg}"></p>
                     <button type="submit" class="submit">注 册</button>
 
                 </form>
