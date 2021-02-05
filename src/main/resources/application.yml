@@ -1,13 +1,17 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    password: 142212
+    password: 123456
     username: root
-    url: jdbc:mysql://localhost:3307/springboot_myblog?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/springboot_myblog?useUnicode=true&characterEncoding=UTF-8&useSSL=false
   mvc:
     static-path-pattern: /**
+    #这个是关键，放开springboot对静态资源的拦截
+    mvc:
+      static-path-pattern: /static/**
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
   port: 8081
+

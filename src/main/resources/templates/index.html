@@ -1,72 +1,59 @@
-<!DOCTYPE html>
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8">
-<title>welcome</title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<link type="text/css" rel="stylesheet" th:href="@{/css/login.css}" />
+<script type="text/javascript" th:src="@{/js/jquery-1.11.1.min.js}"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	var height=$(document).height();
+	$('.main').css('height',height);
+})
+</script>
 </head>
 
 <body>
-    <div class="content">
-        <div class="form sign-in">
-            <form method="post" action="/user/login">
-                <h2>登录</h2>
-                <label>
-                    <span>用户名</span>
-                    <input type="username" />
-                </label>
-                <label>
-                    <span>密码</span>
-                    <input type="password" />
-                </label>
-                <p class="forgot-pass"><a href="javascript:">忘记密码？</a></p>
-                <p class="forgot-pass" style="color: red" th:text="${msg}"></p>
-                <button type="submit" class="submit">登 录</button>
-            </form>
-
+<div class="main">
+  <div class="main0">
+     <div class="main_left">
+        <img th:src="@{/images/login-image-3.png}" class="theimg"/>
+        <img th:src="@{/images/login-image-2.png}" class="secimg"/>
+        <img th:src="@{/images/login-image-1.png}" class="firimg"/>
+     </div>
+     <div class="main_right">
+        <div class="main_r_up">
+            <img th:src="@{/images/user.png}" />
+            <div class="pp">登录</div>
         </div>
-        <div class="sub-cont">
-            <div class="img">
-                <div class="img__text m--up">
-                    <h2>还未注册？</h2>
-                </div>
-                <div class="img__text m--in">
-                    <h2>已有帐号？</h2>
-                    <p>有帐号就登录吧，好久不见了！</p>
-                </div>
-                <div class="img__btn">
-                    <span class="m--up">注 册</span>
-                    <span class="m--in">登 录</span>
-                </div>
-            </div>
-            <div class="form sign-up">
-                <form action="/user/register" method="post">
-                    <h2>立即注册</h2>
-                    <label>
-                        <span>用户名</span>
-                        <input type="text" />
-                    </label>
-                    <label>
-                        <span>邮箱</span>
-                        <input type="email" />
-                    </label>
-                    <label>
-                        <span>密码</span>
-                        <input type="password" />
-                    </label>
-                    <p class="forgot-pass" th:text="${msg}"></p>
-                    <button type="submit" class="submit">注 册</button>
+        <div class="sub"><p>还没有账号？<a href="/user/toregister"><span class="blue">立即注册</span></a></p></div>
+         <form action="/user/login" method="post">
+             <div class="txt">
+                 <span style="letter-spacing:8px;">用户名:</span>
+                 <input name="username" type="text" class="txtphone" placeholder="请输入注册手机号或用户名"/>
+             </div>
+             <div class="txt">
+                 <span style="letter-spacing:4px;">登录密码:</span>
+                 <input name="password" type="text" class="txtphone" placeholder="请输入登录密码"/>
+             </div>
+             <div class="xieyi">
+                 <input name="" type="checkbox" value="" checked="checked"/>
+                 记住我 <a href="password.html"><span class="blue" style=" padding-left:130px; cursor:pointer">忘记密码?</span></a>
+                 <p th:text="${msg}"></p>
+             </div>
 
-                </form>
+            <input type="submit" value="登录" class="xiayibu">
+         </form>
 
-            </div>
-        </div>
-    </div>
+     </div>
+  </div>
+</div>
 
-    <script th:src="@{/js/script.js}"></script>
-
-
+<div class="footer">
+  <div class="footer0">
+     <div class="footer_l">使用条款 | 隐私保护</div>
+     <div class="footer_r">© 2015 （杭州）金融信息服务有限公司    更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></div>
+  </div> 
+</div>
 </body>
-
 </html>
