@@ -1,9 +1,6 @@
 package com.hq.controller;
 
-import com.hq.pojo.User;
 import com.hq.service.impl.UserServiceImpl;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +19,7 @@ public class UserController {
     }
     @RequestMapping("/user/toregister")
     public String toregister(){
-        return "zhuce1";
+        return "user/zhuce1";
     }
     @RequestMapping("/user/tologin")
     public String tologin(){
@@ -36,7 +33,7 @@ public class UserController {
         if ("ok".equals(msg)){
             model.addAttribute("msg",msg);
             model.addAttribute("user",map.get("user"));
-            return "success";
+            return "user/success";
         }else {
             model.addAttribute("msg",msg);
             return "index";
@@ -53,7 +50,7 @@ public class UserController {
             return "index";
         }else {
             model.addAttribute("msg",msg);
-            return "zhuce1";
+            return "user/zhuce1";
         }
     }
 }
