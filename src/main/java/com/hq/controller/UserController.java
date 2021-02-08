@@ -33,7 +33,7 @@ public class UserController {
         if ("ok".equals(msg)){
             model.addAttribute("msg",msg);
             model.addAttribute("user",map.get("user"));
-            return "user/success";
+            return "admin/admin-list";
         }else {
             model.addAttribute("msg",msg);
             return "index";
@@ -52,5 +52,9 @@ public class UserController {
             model.addAttribute("msg",msg);
             return "user/zhuce1";
         }
+    }
+    @RequestMapping("admin")
+    public  String adminIndex(){
+        return "admin/index";
     }
 }
